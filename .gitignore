@@ -1,0 +1,9 @@
+# .NET Build Folders
+[Bb]in/
+[Oo]bj/
+.vs/
+
+# Node / Expo
+node_modules/
+.expo/
+dist/
