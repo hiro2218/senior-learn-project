@@ -4,11 +4,14 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Do not generate an XML documentation file during the build. -->
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
-    <PackageReference Include="Microsoft.OpenApi" Version="3.11.0" />
+    <!-- Commented out to avoid the .NET 10 OpenAPI source generator build error -->
+    <!-- <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" /> -->
+    <!-- <PackageReference Include="Microsoft.OpenApi" Version="3.11.0" /> -->
   </ItemGroup>
 
 </Project>
