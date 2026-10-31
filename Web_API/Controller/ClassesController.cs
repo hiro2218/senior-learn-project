@@ -1,12 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
 
+// Define the controller folder's namespace
 namespace Web_API.Controllers
 {
+    // Mark this class as an API controller
     [ApiController]
+
+    // Set the API URL to api/classes
     [Route("api/[controller]")]
     public class ClassesController : ControllerBase
     {
-        // Mock data representing SeniorLearn classes
+        // Mock data representing SeniorLearn classes       
         private static readonly List<ClassItem> Classes = new()
         {
             new ClassItem
@@ -38,26 +42,52 @@ namespace Web_API.Controllers
             }
         };
 
+        // Handle HTTP GET requests to retrieve all classes
         [HttpGet]
         public ActionResult<IEnumerable<ClassItem>> GetClasses()
         {
+            // Return the class list with HTTP 200 (OK)
             return Ok(Classes);
         }
     }
 
+    // Define the data structure for one class
     public class ClassItem
     {
+        // Unique ID for each class
         public int Id { get; set; }
+
+        // Name of the class
         public string Title { get; set; } = string.Empty;
+
+        // Details about the class
         public string Description { get; set; } = string.Empty;
+
+        // Name of the class instructor
         public string InstructorName { get; set; } = string.Empty;
+
+        // Date and time of the class
         public string ScheduledDateText { get; set; } = string.Empty;
+
+        // Length of the class in minutes
         public int DurationMinutes { get; set; }
+
+        // Current class status
         public string Status { get; set; } = string.Empty;
+
+        // True if the class is online, otherwise false
         public bool IsOnline { get; set; }
+
+        // Online meeting link (optional)
         public string? TeamsMeetingLink { get; set; }
+
+        // Physical class location (optional)
         public string? LocationAddress { get; set; }
+
+        // Maximum number of students allowed
         public int Capacity { get; set; }
+
+        // Number of students currently enrolled
         public int EnrolledCount { get; set; }
     }
 }
